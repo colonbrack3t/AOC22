@@ -11,7 +11,7 @@ for d in data:
         if l in half2:
             score += 1 + chars.index(l)
             break
-print(score)
+print('\033[91m' + str(score))
 score = 0
 for i in range(0,len(data),3):
     elf1 = data[i]
@@ -25,4 +25,4 @@ for i in range(0,len(data),3):
             break
     if not found:
         print('ERROR')#just to ensure we definietle get em all 
-print (score)
+print('\033[91m' + str(score))

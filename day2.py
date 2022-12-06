@@ -28,7 +28,7 @@ for d in data:
             score += 6
         if op == 'C':
             score += 3
-print(score)
+print('\033[91m' + str(score))
 score= 0
 for d in data:
     op , me = d.split(' ')
@@ -56,4 +56,4 @@ for d in data:
             score += 3
         if op == 'C':
             score += 1
-print(score)
+print('\033[91m' + str(score))

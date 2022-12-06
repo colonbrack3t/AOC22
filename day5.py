@@ -35,7 +35,7 @@ for d in data:
 w=''
 for p in piles.items():
     w += p[1][0]
-print(w)
+print('\033[91m' + str(w))
 
 
 stacks = '''
@@ -69,4 +69,4 @@ for d in data:
 w=''
 for p in piles.items():
     w += p[1][0]
-print(w)
+print('\033[91m' + str(w))

@@ -16,7 +16,7 @@ for d in data:
         score+=1
     #idrange1 = range(min1,max1)
     #idrange2 = range(min2,max2)
-print(score)
+print('\033[91m' + str(score))
 score = 0
 for d in data:
     elf1,elf2 = d.split(',')
@@ -32,4 +32,4 @@ for d in data:
         score += 1
     #idrange1 = range(min1,max1)
     #idrange2 = range(min2,max2)
-print(score)
+print('\033[91m' + str(score))

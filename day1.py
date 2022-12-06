@@ -8,5 +8,5 @@ for d in data:
     else:
         running_total+=int(d)
 calories.sort()
-print(calories[-1])
-print( sum(calories[-3:]))
+print('\033[91m' + str(calories[-1]))
+print('\033[91m' +  str(sum(calories[-3:])))
