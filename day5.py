@@ -69,4 +69,4 @@ for d in data:
 w=''
 for p in piles.items():
     w += p[1][0]
-print('\033[91m' + str(w))
+print('\033[91m' + str(w),'\033[0m')

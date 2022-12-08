@@ -25,4 +25,4 @@ for i in range(0,len(data),3):
             break
     if not found:
         print('ERROR')#just to ensure we definietle get em all 
-print('\033[91m' + str(score))
+print('\033[91m' + str(score),'\033[0m')

@@ -88,4 +88,4 @@ for d in data:
 min_directory_size_to_delete = filesystem.getSize() - target_space
 print(f'\033[91m{dirs_less_than_100000_sum}')
 filesystem.getSize()
-print(closest_directory_size)
+print(closest_directory_size,'\033[0m')

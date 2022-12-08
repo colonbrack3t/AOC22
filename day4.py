@@ -32,4 +32,4 @@ for d in data:
         score += 1
     #idrange1 = range(min1,max1)
     #idrange2 = range(min2,max2)
-print('\033[91m' + str(score))
+print('\033[91m' + str(score),'\033[0m')

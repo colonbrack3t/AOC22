@@ -56,4 +56,4 @@ for d in data:
             score += 3
         if op == 'C':
             score += 1
-print('\033[91m' + str(score))
+print('\033[91m' + str(score),'\033[0m')

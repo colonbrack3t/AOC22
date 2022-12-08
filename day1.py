@@ -9,4 +9,4 @@ for d in data:
         running_total+=int(d)
 calories.sort()
 print('\033[91m' + str(calories[-1]))
-print('\033[91m' +  str(sum(calories[-3:])))
+print('\033[91m' +  str(sum(calories[-3:])),'\033[0m')
