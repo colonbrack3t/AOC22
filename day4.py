@@ -14,8 +14,8 @@ for d in data:
         continue
     if min2 <= min1 and max2>= max1:
         score+=1
-    #idrange1 = range(min1,max1)
-    #idrange2 = range(min2,max2)
+
+
 print('\033[91m' + str(score))
 score = 0
 for d in data:
@@ -30,6 +30,6 @@ for d in data:
     id2 = range(min2,max2+1)
     if min1 in id2 or max1 in id2 or min2 in id1 or max2 in id1:
         score += 1
-    #idrange1 = range(min1,max1)
-    #idrange2 = range(min2,max2)
+
+
 print('\033[91m' + str(score),'\033[0m')

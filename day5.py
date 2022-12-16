@@ -2,18 +2,20 @@ import re
 numbers = ' ([0-9]+)'
 rawdata = open("day5input","r").read()
 data = rawdata.split('\n')
+start_reading_move_inputs_from = 0
+def get_stacks():
+    global start_reading_move_inputs_from
+    stacks = ''
+    for i in range(len(data)):
+        d = data[i]
+        if d == '':
+            start_reading_move_inputs_from = i
+            return stacks
+        else:
+            stacks += d + '\n' 
 
-stacks = '''
-[N]     [Q]         [N]            
-[R]     [F] [Q]     [G] [M]        
-[J]     [Z] [T]     [R] [H] [J]    
-[T] [H] [G] [R]     [B] [N] [T]    
-[Z] [J] [J] [G] [F] [Z] [S] [M]    
-[B] [N] [N] [N] [Q] [W] [L] [Q] [S]
-[D] [S] [R] [V] [T] [C] [C] [N] [G]
-[F] [R] [C] [F] [L] [Q] [F] [D] [P]
- 1   2   3   4   5   6   7   8   9 
-'''
+stacks = get_stacks()
+
 stacks = stacks.split('\n')
 piles = {i+1 : [] for i in range(9)}
 for stack in stacks[:-2]:
@@ -21,7 +23,7 @@ for stack in stacks[:-2]:
         l = stack[i+1]
         if l != ' ':
             piles[int(i/4)+1].append(l)
-for d in data:
+for d in data[start_reading_move_inputs_from+1:]:
     n , from_i , to_i = map(int, re.findall(numbers,d))
 
     items = piles[from_i][:n]
@@ -38,17 +40,7 @@ for p in piles.items():
 print('\033[91m' + str(w))
 
 
-stacks = '''
-[N]     [Q]         [N]            
-[R]     [F] [Q]     [G] [M]        
-[J]     [Z] [T]     [R] [H] [J]    
-[T] [H] [G] [R]     [B] [N] [T]    
-[Z] [J] [J] [G] [F] [Z] [S] [M]    
-[B] [N] [N] [N] [Q] [W] [L] [Q] [S]
-[D] [S] [R] [V] [T] [C] [C] [N] [G]
-[F] [R] [C] [F] [L] [Q] [F] [D] [P]
- 1   2   3   4   5   6   7   8   9 
-'''
+stacks = get_stacks()
 stacks = stacks.split('\n')
 piles = {i+1 : [] for i in range(9)}
 for stack in stacks[:-2]:
@@ -56,7 +48,7 @@ for stack in stacks[:-2]:
         l = stack[i+1]
         if l != ' ':
             piles[int(i/4)+1].append(l)
-for d in data:
+for d in data[start_reading_move_inputs_from+1:]:
     n , from_i , to_i = map(int, re.findall(numbers,d))
 
     items = piles[from_i][:n]
